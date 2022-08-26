@@ -28,7 +28,6 @@ def gen_frames():  # generate frame by frame from camera
             if not success:
                 break
             image, results = mediapipe_detection(frame, holistic)
-            draw_styled_landmarks(image, results)
             keypoints = extract_keypoints(results)
             sequence.append(keypoints)
             sequence = sequence[-sequence_length:]
