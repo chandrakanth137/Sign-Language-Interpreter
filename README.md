@@ -1,7 +1,7 @@
 # Sign-Language-Interpreter
 ## app.py is basic FLASK app 
 
-### To run the file execute 
+### To install the required libaries
 ```
 pip install -r requirements.txt
 ```
