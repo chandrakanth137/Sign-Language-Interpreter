@@ -1,25 +1,116 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--=============== CSS ===============-->
+        <style>
+            /*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap");
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: hsl(217, 75%, 80%);
+  --body-color: hsl(211, 100%, 95%);
+  
+  /*========== Font and typography ==========*/
+  --body-font: 'Montserrat Alternates', sans-serif;
+  --normal-font-size: 4.25rem;
+}
 
-    <title>Live Streaming Demonstration</title>
-</head>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8  offset-lg-2">
-            <form action="{{ url_for('predict') }}">
-                <button>Click here</button>
-            </form>
-        </div>
-    </div>
-</div>
-</body>
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--body-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+.button-text {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.button-text:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.button-text:active {
+    color: #000
+}
+
+.button-text:active:after {
+    background: transparent;
+}
+
+.button-text:hover:before {
+    opacity: 1;
+}
+
+.button-text:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+        </style>
+
+        <title>Magic motion button - Bedimcode</title>
+    </head>
+    <body style="background-color: #3EECAC;background-image: linear-gradient(19deg, #3EECAC 0%, #EE74E1 100%);">
+        <h3 class="section-title">SAY-GUY</h3>
+
+        <form action="{{ url_for('predict') }}">
+                <button class="button-text">Click here</button>
+        </form>
+    <script type="text/javascript">
+
+        $('[data-text]').on('keyup', function(){
+        $(this).attr('data-text', $(this).text());
+        });
+    </script>
+    </body>
 </html>
