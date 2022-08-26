@@ -2,6 +2,7 @@ from flask import Flask, render_template, Response, session
 import cv2
 import mediapipe as mp
 import tensorflow as tf
+import csv
 from helper import *
 
 app = Flask(__name__)
@@ -12,9 +13,14 @@ def gen_frames():  # generate frame by frame from camera
     sequence = []
     sequence_length = 40
     threshold = 0.90
-    actions = ['Thank you','Hackathon','Idle',"Hi","Jana Gana Mana Adhinayaka Jaya he'","Welcome"]
+    f = open('actions.csv', 'r')
+    reader = csv.reader(f)
+    actions = []
+    for word in reader:
+        actions.append(word[0])
+    f.close()
     sentence = []
-    model = tf.keras.models.load_model("sys.h5")
+    model = tf.keras.models.load_model("conv-rnn-model.h5")
     while True:
         # Capture frame-by-frame
         with mp_holistic.Holistic(min_detection_confidence=0.77, min_tracking_confidence=0.77) as holistic:
