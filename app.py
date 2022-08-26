@@ -48,7 +48,7 @@ def gen_frames():  # generate frame by frame from camera
                     sentence = sentence[-1:]
                     
             cv2.putText(image,' '.join(sentence), (3,85), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 1, (52,232,235), 2, cv2.LINE_AA)
+                       cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 255), 2, cv2.LINE_AA)
             ret,buffer=cv2.imencode('.jpg', image)
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
