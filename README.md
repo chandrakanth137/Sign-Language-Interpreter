@@ -36,7 +36,7 @@ __actions.csv__ contains the basic terminologies to classify the actions.
 
 **conv-rnn-model.h5** contains the saved keras model which is a Convolutional-Recurrent(LSTM) hybrid model
 
-![model arch.jpeg]
+![](https://github.com/chandrakanth137/Sign-Language-Interpreter/blob/main/model%20arch.jpeg)
 
 The camera feed captures the video stream which is then passed to the mediapipe holistic network
 
