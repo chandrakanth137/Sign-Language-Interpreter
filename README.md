@@ -38,7 +38,6 @@ __actions.csv__ contains the basic terminologies to classify the actions.
 
 ![[model arch.jpeg]]
 
-
 The camera feed captures the video stream which is then passed to the mediapipe holistic network
 
 The holistic network outputs an processed image consisting simultaneous pose, face and landmark estimations. 
