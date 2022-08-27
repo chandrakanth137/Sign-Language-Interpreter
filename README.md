@@ -51,7 +51,7 @@ The keypoints from the processed results are extracted, which are then passed to
 ![](https://github.com/chandrakanth137/Sign-Language-Interpreter/blob/main/output1.jpeg)
 ![](https://github.com/chandrakanth137/Sign-Language-Interpreter/blob/main/output2.jpeg)
 
-![](https://github.com/chandrakanth137/Sign-Language-Interpreter/blob/main/output3.mp4)
+![](https://github.com/chandrakanth137/Sign-Language-Interpreter/blob/main/output3.gif)
 
 
 
