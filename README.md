@@ -44,6 +44,9 @@ The holistic network outputs an processed image consisting simultaneous pose, fa
 
 The keypoints from the processed results are extracted, which are then passed to the conv-rnn model to predict the meaning of the given sign.
 
+### Flowchart
+![](https://github.com/chandrakanth137/Sign-Language-Interpreter/blob/main/flowchart.jpeg)
+
 
 
 
